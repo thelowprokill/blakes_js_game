@@ -1,0 +1,13 @@
+services:
+  skates-server:
+    build: .
+    container_name: put-em-on-skates-server
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    # Required to keep your readline console (SERVER > ) interactive
+    stdin_open: true
+    tty: true
